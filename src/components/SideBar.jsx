@@ -6,7 +6,7 @@ const SideBar = () => {
     return (
         <div className='text-black h-screen w-[28%] bg-black ml-auto'>
             {/* user section */}
-            <div className='flex bg-white w-[90%] mx-auto py-4 px-4'> 
+            <div className='flex bg-white w-[90%] mx-auto py-4 px-4 rounded-md'> 
                 <img className='w-[90px] h-auto ml-2 mr-10' src={Photo} alt="/" />
                 <div>
                     <h1 className='text-[20px] font-bold py-4'>Syed Omee</h1>
@@ -15,6 +15,10 @@ const SideBar = () => {
                         <p className='ml-2 text-[gray]'>Dhaka, Bangladesh</p>
                     </div>
                 </div>
+            </div>
+            {/* health section */}
+            <div className='bg-[#E6E5E5] w-[90%] mx-auto rounded-md h-[10%] my-6'>
+                Hello
             </div>
         </div>
     );
