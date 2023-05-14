@@ -4,7 +4,7 @@ import Photo from '../assests/Omee8.png';
 
 const SideBar = () => {
     const time = 200;
-    const breakTime = 20;
+    let breakTime = 20;
 
     return (
         <div className='text-black h-screen w-[28%] bg-white ml-auto'>
@@ -22,15 +22,15 @@ const SideBar = () => {
             {/* health section */}
             <div className='bg-[#E6E5E5] mx-5 rounded-xl py-5 my-6 flex justify-around items-center'>
                 <div className='flex flex-col text-center font-bold text-xl'>
-                    75kg
+                    74kg
                     <span className='font-thin text-sm'>Weight</span>
                 </div>
                 <div className='flex flex-col text-center font-bold text-xl'>
-                    6.5
+                    1.78m
                     <span className='font-thin text-sm'>Height</span>
                 </div>
                 <div className='flex flex-col text-center font-bold text-xl'>
-                    25yrs
+                    27yrs
                     <span className='font-thin text-sm'>Age</span>
                 </div>
             </div>
@@ -40,11 +40,31 @@ const SideBar = () => {
             </div>
             {/* time section */}
             <div className='bg-[#E6E5E5] mx-5 rounded-xl py-8 my-6 flex justify-around items-center'>
-                <div className='w-16 h-16 rounded-full bg-white flex justify-center items-center'><span>10s</span></div>
-                <div className='w-16 h-16 rounded-full bg-white flex justify-center items-center'><span>20s</span></div>
-                <div className='w-16 h-16 rounded-full bg-white flex justify-center items-center'><span>30s</span></div>
-                <div className='w-16 h-16 rounded-full bg-white flex justify-center items-center'><span>40s</span></div>
-                <div className='w-16 h-16 rounded-full bg-white flex justify-center items-center'><span>50s</span></div>
+                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                    <span>
+                        <button>10s</button>
+                    </span>
+                </div>
+                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                    <span>
+                        <button>15s</button>
+                    </span>
+                </div>  
+                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                    <span>
+                        <button>20s</button>
+                    </span>
+                </div>
+                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                    <span>
+                        <button>25s</button>
+                    </span>
+                </div>
+                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                    <span>
+                        <button>30s</button>
+                    </span>
+                </div>
             </div>
             {/* details section */}
             <div className='text-black mx-5 text-[1.5rem] mt-8'>
@@ -54,11 +74,11 @@ const SideBar = () => {
             <div className='mx-5'>
                 <div className='bg-[#E6E5E5] px-5 rounded-xl py-5 my-6 flex justify-between'>
                     <span className='text-xl'>Exercise Time</span>
-                    <span className='text-xl text-[#f8f8f8]'>{time} seconds</span>
+                    <span className='text-xl text-[#3731e6]'>{time} seconds</span>
                 </div>
                 <div className='bg-[#E6E5E5] px-5 rounded-xl py-5 my-6 flex justify-between'>
                     <span className='text-xl'>Break Time</span>
-                    <span className='text-xl text-[#f8f8f8]'>{breakTime} seconds</span>
+                    <span className='text-xl text-[#3731e6]'>{breakTime} seconds</span>
                 </div>
             </div>
             <div className='mx-5'>
