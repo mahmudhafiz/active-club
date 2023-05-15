@@ -1,10 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GrLocation } from 'react-icons/gr';
 import Photo from '../assests/Omee8.png';
 
 const SideBar = () => {
-    const time = 200;
-    let breakTime = 20;
+    const [list, setList] = useState([]);
+    const [time, setTime] = useState(0);
+    const [breakTime, setBreakTime] = useState(0);
+
+    const [noTimes, setNoTimes] = useState(0);
+    const [noBreakTimes, setNoBreakTimes] = useState(0);
+
+    const breakTimeAdderOne = () => {
+        setNoBreakTimes(noBreakTimes + 1);
+        setBreakTime(breakTime + 10);
+    }
+    const breakTimeAdderTwo = () => {
+        setNoBreakTimes(noBreakTimes + 1);
+        setBreakTime(breakTime + 15);
+    }
+    const breakTimeAdderThree = () => {
+        setNoBreakTimes(noBreakTimes + 1);
+        setBreakTime(breakTime + 20);
+    }
+    const breakTimeAdderFour = () => {
+        setNoBreakTimes(noBreakTimes + 1);
+        setBreakTime(breakTime + 25);
+    }
+    const breakTimeAdderFive = () => {
+        setNoBreakTimes(noBreakTimes + 1);
+        setBreakTime(breakTime + 30);
+    }
+
+    useEffect(() => {
+        
+    }, [list]);
+
+    useEffect(() => {
+
+    }, [noBreakTimes]);
 
     return (
         <div className='text-black h-screen w-[28%] bg-white ml-auto'>
@@ -19,14 +52,14 @@ const SideBar = () => {
                     </div>
                 </div>
             </div>
-            {/* health section */}
+            {/* bioM section */}
             <div className='bg-[#E6E5E5] mx-5 rounded-xl py-5 my-6 flex justify-around items-center'>
                 <div className='flex flex-col text-center font-bold text-xl'>
                     74kg
                     <span className='font-thin text-sm'>Weight</span>
                 </div>
                 <div className='flex flex-col text-center font-bold text-xl'>
-                    1.78m
+                    178cm
                     <span className='font-thin text-sm'>Height</span>
                 </div>
                 <div className='flex flex-col text-center font-bold text-xl'>
@@ -34,51 +67,77 @@ const SideBar = () => {
                     <span className='font-thin text-sm'>Age</span>
                 </div>
             </div>
-            {/* break section */}
+            {/* breakHeadline section */}
             <div className='text-black mx-5 text-[1.5rem]'>
                 Add A Break
             </div>
-            {/* time section */}
-            <div className='bg-[#E6E5E5] mx-5 rounded-xl py-8 my-6 flex justify-around items-center'>
-                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
-                    <span>
-                        <button>10s</button>
-                    </span>
-                </div>
-                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
-                    <span>
-                        <button>15s</button>
-                    </span>
-                </div>  
-                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
-                    <span>
-                        <button>20s</button>
-                    </span>
-                </div>
-                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
-                    <span>
-                        <button>25s</button>
-                    </span>
-                </div>
-                <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
-                    <span>
-                        <button>30s</button>
-                    </span>
-                </div>
+            {/* break section */}
+            <div className='bg-[#E6E5E5] mx-5 px-5 rounded-xl py-8 my-6 inline-grid grid-cols-5 gap-x-5'>
+                <button onClick={breakTimeAdderOne} >
+                    <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                        <span>
+                            10s
+                        </span>
+                    </div>
+                </button>
+
+                <button onClick={breakTimeAdderTwo}>
+                    <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                        <span>
+                            15s
+                        </span>
+                    </div>  
+                </button>
+
+                <button onClick={breakTimeAdderThree}>
+                    <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                        <span>
+                            20s
+                        </span>
+                    </div>
+                </button>
+
+                <button onClick={breakTimeAdderFour}>
+                    <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                        <span>
+                            25s
+                        </span>
+                    </div>
+                </button>
+
+                <button onClick={breakTimeAdderFive}>
+                    <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                        <span>
+                            30s
+                        </span>
+                    </div>
+                </button>
             </div>
-            {/* details section */}
+            {/* excrcise section */}
             <div className='text-black mx-5 text-[1.5rem] mt-8'>
                 Exercise Details
             </div>
             {/* time section */}
             <div className='mx-5'>
                 <div className='bg-[#E6E5E5] px-5 rounded-xl py-5 my-6 flex justify-between'>
-                    <span className='text-xl'>Exercise Time</span>
-                    <span className='text-xl text-[#3731e6]'>{time} seconds</span>
+                    <div className='w-32'>
+                        <span className='text-xl'>
+                            Exercise Time
+                        </span>
+                    </div>
+                    <span className='text-green-800 font-bold'>x{noTimes}</span>
+                    <div className='w-32'>
+                        <div className='text-xl text-right text-[#a30909d6]'>{time} seconds</div>
+                    </div>
                 </div>
                 <div className='bg-[#E6E5E5] px-5 rounded-xl py-5 my-6 flex justify-between'>
-                    <span className='text-xl'>Break Time</span>
-                    <span className='text-xl text-[#3731e6]'>{breakTime} seconds</span>
+                    <div className='w-32'>
+                        <span className='text-xl'>Break Time</span>
+                    </div>
+                    <span className='text-green-800 font-bold'>x{noBreakTimes}</span>
+                    <div className='w-32'>
+                        <div className='text-xl text-right text-[#a30909d6]'>{breakTime} seconds</div>
+                    </div>
                 </div>
             </div>
             <div className='mx-5'>

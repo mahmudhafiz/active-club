@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import Logo from '../../assests/logo.png';
 import Cards from './Cards';
 import One from '../../assests/exe1.jpg';
@@ -8,7 +8,19 @@ import Four from '../../assests/exe4.jpg';
 import Five from '../../assests/exe5.jpeg';
 import Six from '../../assests/exe6.jpg';
 
-const HeroSection = () => {
+export const TimeContext = createContext();
+
+const HeroSection = (props) => {
+    const [exerciseList, setExerciseList] = useState([]);
+
+    const addToList = (add) => {
+        setExerciseList(old => [...old, add]);
+    }
+
+    useEffect(()=> {
+        console.log(exerciseList);
+    }, [exerciseList]);
+    
     const cards = [
         {
             id: 1,
@@ -31,7 +43,7 @@ const HeroSection = () => {
         {
             id: 3,
             image: Three,
-            title: 'Dumble Curl',
+            title: 'Dumbell Curl',
             desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, iure?',
             range: '20-25',
             time: 40,
@@ -68,16 +80,16 @@ const HeroSection = () => {
     
     return (
         <div className='w-[72%]'>
-            <div className='mx-32 py-6'>
+            <div className='mx-28 py-6'>
                 <div className='flex items-center'>
                     <img src={Logo} alt="" className='w-[60px] mr-8' />
                     <h1 className='text-[#3731e6] font-bold text-3xl'>ULTRA-ACTIVE-CLUB</h1>
                 </div>
                 <p className='my-5 py-2 text-xl'>Select Today's Exercise</p>
-                <div className='grid grid-cols-3 gap-y-4'>
+                <div className='ml-7 grid grid-cols-3 gap-y-7 gap-x-7 justify-center items-center'>
                     {
                         cards.map( card => 
-                            <Cards key={card.id} card={card}></Cards>        
+                            <Cards key={card.id} props={{card, addToList}}></Cards>        
                         )
                     }
                 </div>
