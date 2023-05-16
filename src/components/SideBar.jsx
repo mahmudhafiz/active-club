@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { GrLocation } from 'react-icons/gr';
 import Photo from '../assests/Omee8.png';
+import { TimeContext } from './Menu';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SideBar = () => {
-    const [list, setList] = useState([]);
-    const [time, setTime] = useState(0);
-    const [breakTime, setBreakTime] = useState(0);
+    let receivedArray = useContext(TimeContext);
 
-    const [noTimes, setNoTimes] = useState(0);
+    const notify = () => {
+        toast(`Congratulations! you have worked out for ${time} seconds`);
+    }
+
+    let time = 0;
+    receivedArray.forEach(num => time += num);
+
+    const [breakTime, setBreakTime] = useState(0);
     const [noBreakTimes, setNoBreakTimes] = useState(0);
 
     const breakTimeAdderOne = () => {
@@ -33,11 +41,7 @@ const SideBar = () => {
 
     useEffect(() => {
         
-    }, [list]);
-
-    useEffect(() => {
-
-    }, [noBreakTimes]);
+    }, [receivedArray]);
 
     return (
         <div className='text-black h-screen w-[28%] bg-white ml-auto'>
@@ -125,7 +129,7 @@ const SideBar = () => {
                             Exercise Time
                         </span>
                     </div>
-                    <span className='text-green-800 font-bold'>x{noTimes}</span>
+                    <span className='text-green-800 font-bold'>x{receivedArray.length}</span>
                     <div className='w-32'>
                         <div className='text-xl text-right text-[#a30909d6]'>{time} seconds</div>
                     </div>
@@ -141,7 +145,12 @@ const SideBar = () => {
                 </div>
             </div>
             <div className='mx-5'>
-                <button className='bg-[#3731e6] w-full rounded-md font-medium my-6 py-3 text-white'>Activity Completed</button>
+                <button
+                    onClick={notify} 
+                    className='bg-[#3731e6] w-full rounded-md font-medium my-6 py-3 text-white'>
+                        Activity Completed
+                </button>
+                <ToastContainer></ToastContainer>
             </div>
         </div>
     );

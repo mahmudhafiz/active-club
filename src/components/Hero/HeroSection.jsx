@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React from 'react';
 import Logo from '../../assests/logo.png';
 import Cards from './Cards';
 import One from '../../assests/exe1.jpg';
@@ -8,19 +8,11 @@ import Four from '../../assests/exe4.jpg';
 import Five from '../../assests/exe5.jpeg';
 import Six from '../../assests/exe6.jpg';
 
-export const TimeContext = createContext();
-
 const HeroSection = (props) => {
-    const [exerciseList, setExerciseList] = useState([]);
-
     const addToList = (add) => {
-        setExerciseList(old => [...old, add]);
+        props.setList(old => [...old, add]);
     }
 
-    useEffect(()=> {
-        console.log(exerciseList);
-    }, [exerciseList]);
-    
     const cards = [
         {
             id: 1,
