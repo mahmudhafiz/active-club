@@ -9,7 +9,7 @@ const SideBar = () => {
     let receivedArray = useContext(TimeContext);
 
     const notify = () => {
-        toast(`Congratulations! you have worked out for ${time} seconds`);
+        toast(`Congratulations! you have worked out for ${time + breakTime} seconds`);
     }
 
     let time = 0;
