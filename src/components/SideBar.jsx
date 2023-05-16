@@ -9,7 +9,7 @@ const SideBar = () => {
     let receivedArray = useContext(TimeContext);
 
     const notify = () => {
-        toast(`Congratulations! you have worked out for ${time + breakTime} seconds`);
+        toast(`Congratulations! you have worked out for ${Math.floor((time + breakTime) / 60)}m ${(time + breakTime) % 60}s`);
     }
 
     let time = 0;
@@ -131,7 +131,7 @@ const SideBar = () => {
                     </div>
                     <span className='text-green-800 font-bold'>x{receivedArray.length}</span>
                     <div className='w-32'>
-                        <div className='text-xl text-right text-[#a30909d6]'>{time} seconds</div>
+                        <div className='text-xl text-right text-[#a30909d6]'>{Math.floor(time / 60)}m {time % 60}s</div>
                     </div>
                 </div>
                 <div className='bg-[#E6E5E5] px-5 rounded-xl py-5 my-6 flex justify-between'>
@@ -140,7 +140,7 @@ const SideBar = () => {
                     </div>
                     <span className='text-green-800 font-bold'>x{noBreakTimes}</span>
                     <div className='w-32'>
-                        <div className='text-xl text-right text-[#a30909d6]'>{breakTime} seconds</div>
+                        <div className='text-xl text-right text-[#a30909d6]'>{Math.floor(breakTime / 60)}m {breakTime % 60}s</div>
                     </div>
                 </div>
             </div>
