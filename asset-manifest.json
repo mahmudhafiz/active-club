@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/active-club/static/css/main.114fec67.css",
-    "main.js": "/active-club/static/js/main.ff63ffbe.js",
+    "main.js": "/active-club/static/js/main.5afc7294.js",
     "static/media/exe6.jpg": "/active-club/static/media/exe6.0d37e844f2826e9f3193.jpg",
     "static/media/exe5.jpeg": "/active-club/static/media/exe5.b0206d26a3a886adc0e8.jpeg",
     "static/media/Omee8.png": "/active-club/static/media/Omee8.e59cb57749bff7523dac.png",
@@ -11,10 +11,10 @@
     "static/media/exe1.jpg": "/active-club/static/media/exe1.6993c8a81f8320dc014b.jpg",
     "index.html": "/active-club/index.html",
     "main.114fec67.css.map": "/active-club/static/css/main.114fec67.css.map",
-    "main.ff63ffbe.js.map": "/active-club/static/js/main.ff63ffbe.js.map"
+    "main.5afc7294.js.map": "/active-club/static/js/main.5afc7294.js.map"
   },
   "entrypoints": [
     "static/css/main.114fec67.css",
-    "static/js/main.ff63ffbe.js"
+    "static/js/main.5afc7294.js"
   ]
 }
