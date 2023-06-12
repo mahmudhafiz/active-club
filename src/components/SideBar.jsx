@@ -18,26 +18,12 @@ const SideBar = () => {
     const [breakTime, setBreakTime] = useState(0);
     const [noBreakTimes, setNoBreakTimes] = useState(0);
 
-    const breakTimeAdderOne = () => {
+    const breakTimeAdder = (event) => {
+        let val = event.currentTarget.id;
+        
         setNoBreakTimes(noBreakTimes + 1);
-        setBreakTime(breakTime + 10);
-    }
-    const breakTimeAdderTwo = () => {
-        setNoBreakTimes(noBreakTimes + 1);
-        setBreakTime(breakTime + 15);
-    }
-    const breakTimeAdderThree = () => {
-        setNoBreakTimes(noBreakTimes + 1);
-        setBreakTime(breakTime + 20);
-    }
-    const breakTimeAdderFour = () => {
-        setNoBreakTimes(noBreakTimes + 1);
-        setBreakTime(breakTime + 25);
-    }
-    const breakTimeAdderFive = () => {
-        setNoBreakTimes(noBreakTimes + 1);
-        setBreakTime(breakTime + 30);
-    }
+        setBreakTime(breakTime + val * 10);
+    };
 
     useEffect(() => {
         
@@ -77,7 +63,7 @@ const SideBar = () => {
             </div>
             {/* break section */}
             <div className='bg-[#E6E5E5] mx-5 px-5 rounded-xl py-8 my-6 inline-grid grid-cols-5 gap-x-5'>
-                <button onClick={breakTimeAdderOne} >
+                <button id='1' onClick={breakTimeAdder}>
                     <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
                         <span>
                             10s
@@ -85,34 +71,34 @@ const SideBar = () => {
                     </div>
                 </button>
 
-                <button onClick={breakTimeAdderTwo}>
-                    <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
-                        <span>
-                            15s
-                        </span>
-                    </div>  
-                </button>
-
-                <button onClick={breakTimeAdderThree}>
+                <button id='2' onClick={breakTimeAdder}>
                     <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
                         <span>
                             20s
                         </span>
-                    </div>
+                    </div>  
                 </button>
 
-                <button onClick={breakTimeAdderFour}>
+                <button id='3' onClick={breakTimeAdder}>
                     <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
                         <span>
-                            25s
+                            30s
                         </span>
                     </div>
                 </button>
 
-                <button onClick={breakTimeAdderFive}>
+                <button id='4' onClick={breakTimeAdder}>
                     <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
                         <span>
-                            30s
+                            40s
+                        </span>
+                    </div>
+                </button>
+
+                <button id='5' onClick={breakTimeAdder}>
+                    <div className='w-16 h-16 rounded-full bg-white hover:bg-[#3731e6] hover:text-white flex justify-center items-center'>
+                        <span>
+                            50s
                         </span>
                     </div>
                 </button>
